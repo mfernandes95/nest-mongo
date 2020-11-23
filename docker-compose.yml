@@ -8,21 +8,25 @@ services:
       - 27017:27017
     networks:
       - redeInterna
-    restart: on-failure
+    restart: always
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
       - "./src/database/mongo:/var/lib/mongodb/data"
 
   node:
     container_name: node_nestTeste
     build: .
+    command: npm run start:dev
     networks: 
       - redeInterna
     ports:
-      - 3333:3333
+      - 3000:3000
     depends_on:
       - db_mongo
     volumes:
-      - .:usr/app
+      - .:/usr/app
 
 networks:
   redeInterna:
