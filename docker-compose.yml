@@ -15,6 +15,21 @@ services:
     volumes:
       - "./src/database/mongo:/var/lib/mongodb/data"
 
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_SERVER: db_mongo
+    networks:
+     - redeInterna 
+
+    depends_on: 
+      - db_mongo
+
   node:
     container_name: node_nestTeste
     build: .
