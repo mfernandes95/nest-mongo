@@ -38,6 +38,7 @@ services:
       - redeInterna
     ports:
       - 3000:3000
+      - 9229:9229
     depends_on:
       - db_mongo
     volumes:
