@@ -8,33 +8,31 @@ export type PessoaDocument = Usuario & Document;
 @Schema()
 export class Usuario{
     @Prop({required: true})
-    nome: String
+    name: String
+
+    @Prop({required: true})
+    password: String;
+
+    @Prop({required: true})
+    cpf: number;
 
     @Prop()
-    idade: Number;
-
-    @Prop({required: true})
-    telefone: Number;
-
-    @Prop({required: true})
-    login: String;
-
-    @Prop({required: true})
-    senha: String;
+    birthday: Date;
+    
 
 }
 
-export let UsuarioSchema;
 
-UsuarioSchema.pre('save', async function (proximo) {
-  let usuario_preenchido = this;
 
-  bcrypt.hash(usuario_preenchido.senha, function (error, hash) {
-    if (error) return proximo(error);
+// UsuarioSchema.pre('save', async function (proximo) {
+//   let usuario_preenchido = this;
 
-    usuario_preenchido.senha = hash;
-    proximo();
-  });
-});
+//   bcrypt.hash(usuario_preenchido.senha, function (error, hash) {
+//     if (error) return proximo(error);
 
-UsuarioSchema = SchemaFactory.createForClass(Usuario);
+//     usuario_preenchido.senha = hash;
+//     proximo();
+//   });
+// });
+
+export let UsuarioSchema = SchemaFactory.createForClass(Usuario);
