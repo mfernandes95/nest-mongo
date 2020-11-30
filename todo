@@ -1,0 +1,21 @@
+[] Criar rota de login
+  [] Usar email e password p/ login
+  [] Usar bcrypt p/ fazer comparação de password com o hash do password
+  [] Fazer login via JWT
+
+[] Criar entity products
+  [] Fazer CRUD
+    [] Somente o dono do produto pode excluir e fazer update o produto
+    [] Somente um usuário logado podera fazer as operações com o CRUD dos produtos
+    [] A entity de products deve conter (name, description, price, pictures, user_id)
+    [] Fazer upload de imagem
+    [] Fazer relacionamento oneToMany com a entity user (Um user tem muitos products e um products tem um user)
+
+[] Escrever testes unitários
+[] Escrever testes e2e 
+
+*** PONTOS DE ATENÇÃO ***
+* Nomes e variaves, funções, classes sempre e inglês e seguir as regras de camel case para variavel e constantes
+  e pascal case para campos do banco de dados
+
+* Mensagem dos commits sempre em inglês
