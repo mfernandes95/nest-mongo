@@ -3,6 +3,8 @@
   [] Usar bcrypt p/ fazer comparação de password com o hash do password
   [] Fazer login via JWT
 
+[] Fazer catch global de exceptions
+
 [] Criar entity products
   [] Fazer CRUD
     [] Somente o dono do produto pode excluir e fazer update o produto
@@ -19,3 +21,5 @@
   e pascal case para campos do banco de dados
 
 * Mensagem dos commits sempre em inglês
+
+* Utilizar tipagem

@@ -1,10 +1,11 @@
 FROM node:latest
 
-WORKDIR /usr/app
+WORKDIR /usr/src/app
 
 COPY package*.json ./
-RUN npm install 
+
+RUN npm i
+
+RUN npm i -g @nestjs/cli
 
 COPY . .
-
-RUN npm run build
