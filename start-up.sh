@@ -1,2 +1,3 @@
 #! /bin/sh
-#nest start 
+yarn
+yarn start:dev

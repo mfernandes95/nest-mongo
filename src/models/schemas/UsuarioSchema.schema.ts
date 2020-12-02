@@ -1,24 +1,27 @@
 import { MongooseModule } from "@nestjs/mongoose";
-import {Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import {Document} from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
 export type PessoaDocument = Usuario & Document;
 
 @Schema()
-export class Usuario{
-    @Prop({required: true})
+export class Usuario {
+    @Prop({ required: true })
     name: String
 
-    @Prop({required: true})
+    @Prop({ required: true })
     password: String;
 
-    @Prop({required: true})
+    @Prop({ required: true })
     cpf: number;
+
+    @Prop({ required: true })
+    email: String;
 
     @Prop()
     birthday: Date;
-    
+
 
 }
 

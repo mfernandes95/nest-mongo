@@ -5,7 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
@@ -20,6 +20,12 @@ export class UserController {
   @Get(':cpf')
   findOne(@Param('cpf') cpf: Number) {
     return this.userService.findOne(+cpf);
+  }
+
+  @Get('email/:email')
+  findByEmail(@Param('email') email: String) {
+    console.log('emailllllllll', email);
+    return this.userService.findByEmail(email);
   }
 
   @Put(':cpf')
