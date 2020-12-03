@@ -3,6 +3,10 @@
   [] Usar bcrypt p/ fazer comparação de password com o hash do password
   [] Fazer login via JWT
 
+[] Validar CPF is unique
+
+[] Validar Email is unique
+
 [] Fazer catch global de exceptions
 
 [] Criar entity products
