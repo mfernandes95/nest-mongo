@@ -1,11 +1,12 @@
-import { AuthService } from './shared/auth.service';
-import { Module } from '@nestjs/common';
-import { UserModule } from 'src/user/user.module';
+import { Controller, UseGuards, Request, Post } from '@nestjs/common';
+import { LocalAuthGuard } from './shared/local-auth.guard';
 
-@Module({
-  imports: [UserModule],
-  controllers: [],
-  providers: [AuthService],
-  exports: [AuthService]
-})
-export class AuthModule {}
+
+@Controller()
+export class AuthModule {
+  @UseGuards(LocalAuthGuard)
+  @Post('auth/login')
+  async login(@Request() req: any){
+    return req.user;
+  }
+}
