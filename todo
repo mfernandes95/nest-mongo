@@ -1,7 +1,7 @@
 [X] Criar rota de login
   [X] Usar email e password p/ login
   [] Usar bcrypt p/ fazer comparação de password com o hash do password
-  [] Fazer login via JWT
+  [X] Fazer login via JWT
 
 [] Validar CPF is unique
 
