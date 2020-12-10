@@ -10,7 +10,11 @@ export class UserService {
   constructor(@InjectModel('User') private readonly usermodel: Model<User>) { }
 
   async create(userDto: CreateUserDto): Promise<User> {
+    const bcrypt = require('bcrypt');
     const user = new this.usermodel(userDto);
+    const {password} = user;
+    let passEncrypt = bcrypt.hash(password, 10)
+    user.password = await passEncrypt;
     console.log('Teste_Post', user);
     return await user.save();
   }
