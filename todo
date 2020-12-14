@@ -1,11 +1,11 @@
 [X] Criar rota de login
   [X] Usar email e password p/ login
-  [] Usar bcrypt p/ fazer comparação de password com o hash do password
+  [X] Usar bcrypt p/ fazer comparação de password com o hash do password
   [X] Fazer login via JWT
 
-[] Validar CPF is unique
+[X] Validar CPF is unique
 
-[] Validar Email is unique
+[X] Validar Email is unique
 
 [] Fazer catch global de exceptions
 

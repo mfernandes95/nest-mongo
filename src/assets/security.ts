@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+import * as bcrypt from 'bcrypt';
 
 export class ValidateSecurity {
   public static async generateHash(
